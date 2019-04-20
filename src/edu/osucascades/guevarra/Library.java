@@ -1,11 +1,36 @@
 package edu.osucascades.guevarra;
 
 public class Library {
-    public Library(String[] args) {
+    String addresses;
+
+    public Library(String address){
+
     }
+
+    public static void printOpeningHours(){
+
+    }
+    public void printAddress(){
+
+    }
+    public void addBook(){
+
+    }
+    public void borrowBook(){
+
+    }
+    public void printAvailableBooks(){
+
+    }
+    public void returnBook(){
+
+    }
+
 
     //Add the missing implementation to this class
     public static void main(String[] args) {
+
+
         //Create two libraries
         Library firstLibrary = new Library("10 Main St.");
         Library secondLibrary = new Library("228 Liberty St.");
@@ -17,7 +42,8 @@ public class Library {
         firstLibrary.addBook(new Book("A Tale of Two Cities"));
         firstLibrary.addBook(new Book("The Lord of the Rings"));
 
-        //Print opening hours and the addresses System.out.println("Library hours:");
+        //Print opening hours and the addresses
+        System.out.println("Library hours:");
         printOpeningHours();
         System.out.println();
 
@@ -29,7 +55,7 @@ public class Library {
 
         //Try to borrow The Lords of the Rings from both libraries
         System.out.println("Borrowing the Lord of the Rings:");
-        firstLibrary.borrowbook("The Lord of the Rings");
+        firstLibrary.borrowBook("The Lord of the Rings");
         firstLibrary.borrowBook("The Lord of the Rings");
         secondLibrary.borrowBook("The Lord of the Rings");
         System.out.println();
@@ -53,8 +79,8 @@ public class Library {
         System.out.println("Books available in the first library:");
         firstLibrary.printAvailableBooks();
     }
-}
 
+}
 
 
 
