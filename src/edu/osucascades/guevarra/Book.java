@@ -37,7 +37,8 @@ public class Book {
 
     public static void main(String[] args) {
         Book example = new Book("The Da Vinci Code");
-        System.out.println("The Da Vinci Code;" + example.isBorrowed());
+        System.out.println("Title(should be The Da Vinci Code):" + example.isBorrowed());
+        System.out.println("Borrowed? (should be false):" + example.isBorrowed());
         example.borrowed();
         System.out.println("Borrowed? (should be true):" + example.isBorrowed());
         example.returned();
