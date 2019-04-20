@@ -1,28 +1,33 @@
 package edu.osucascades.guevarra;
 
 public class Library {
+    Book[] bookCollection;
     String addresses;
+    int numberOfBooks;
 
     public Library(String address){
 
     }
 
     public static void printOpeningHours(){
+        System.out.println("Libraries are open daily from 9am to 5pm");
 
     }
     public void printAddress(){
 
     }
-    public void addBook(){
+    public void addBook(Book newBook){
+        bookCollection[numberOfBooks] = newBook;
+        numberOfBooks++;
 
     }
-    public void borrowBook(){
+    public void borrowBook( ){
 
     }
     public void printAvailableBooks(){
 
     }
-    public void returnBook(){
+    public void returnBook(String title){
 
     }
 
