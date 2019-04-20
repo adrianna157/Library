@@ -5,7 +5,10 @@ public class Library {
     String addresses;
     int numberOfBooks;
 
-    public Library(String address){
+    public Library(String libraryAddress){
+        addresses = libraryAddress;
+        bookCollection = new Book [4];
+        numberOfBooks = 0;
 
     }
 
@@ -14,6 +17,7 @@ public class Library {
 
     }
     public void printAddress(){
+        System.out.println(addresses);
 
     }
     public void addBook(Book newBook){
@@ -21,13 +25,44 @@ public class Library {
         numberOfBooks++;
 
     }
-    public void borrowBook( ){
+    public void borrowBook(String title ){
+        for(int i=0; i<numberOfBooks; i++)
+            if(bookCollection[i].getTitle().equals(title))
+                if(bookCollection[i].isBorrowed()) {
+                    System.out.println("Sorry, this book is already borrowed.");
+                    return;
+                }
+                else {
+                    System.out.println("You successfully borrowed " + title);
+                    bookCollection[i].borrowed();
+                    bookCollection[i].borrowed = true;
+                    return;
+                }
+                System.out.println("Sorry, this book is not in our catalog.");
 
     }
     public void printAvailableBooks(){
+        if(numberOfBooks == 0)
+            System.out.println("No book in catalogue");
+        for(int i=0; i<numberOfBooks; i++)
+            if(!bookCollection[i].isBorrowed())
+                System.out.println(bookCollection[i].getTitle());
 
     }
     public void returnBook(String title){
+        for(int i=0; i<numberOfBooks; i++)
+            if(bookCollection[i].getTitle().equals(title))
+                if(bookCollection[i].isBorrowed()) {
+                    System.out.println("You successfully returned " + title);
+                    bookCollection[i].returned();
+                    return;
+                }
+                else {
+                    System.out.println("This book was not borrowed.");
+                    return;
+                }
+
+        System.out.println("Sorry, this book is not in our catalog.");
 
     }
 
